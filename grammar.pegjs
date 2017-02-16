@@ -44,6 +44,10 @@
       };
     }, head);
   }
+
+  function concat ( head, tail ) {
+    return tail ? [ head ].concat( tail ) : [ head ];
+  }
 }
 
 start
@@ -67,7 +71,7 @@ stylesheet
     }
 
 import
-  = IMPORT_SYM S* href:(STRING / URI) S* media:media_list? ";" S* {
+  = IMPORT_SYM S* href:(STRING / URI) S* media:media_query_list? ";" S* {
       return {
         type: "ImportRule",
         href: href,
@@ -76,19 +80,63 @@ import
     }
 
 media
-  = MEDIA_SYM S* media:media_list "{" S* rules:ruleset* "}" S* {
+  = comment* "@media" S+ media:media_query_list S* "{" S* rules:ruleset* "}" S* {
       return {
         type: "MediaRule",
         media: media,
-        rules: rules
+        rules: rules,
+        start: location().start.offset,
+        end: location().end.offset
       };
     }
 
-media_list
-  = head:medium tail:("," S* medium)* { return buildList(head, tail, 2); }
+media_query_list
+  = head:media_query tail:("," S* media_query)* { return buildList(head, tail, 2); }
 
-medium
-  = name:IDENT S* { return name; }
+media_query
+  = qualifier:( ONLY / NOT )? S* type:IDENT_WITH_LOCATION expressions:and_expression_list? {
+      return {
+        not: qualifier === 'not',
+        type: type,
+        expressions: expressions
+      };
+    }
+  / head:expression tail:and_expression_list? {
+    return {
+      not: false,
+      type: null,
+      expressions: concat(head, tail)
+    };
+  }
+
+and_expression_list
+  = S+ AND S* head:expression tail:and_expression_list? {
+    return concat(head, tail);
+  }
+
+ONLY
+  = O N L Y {
+    return "only";
+  }
+
+NOT
+  = N O T {
+    return "not";
+  }
+
+AND
+  = A N D
+
+expression
+  = '(' S* feature:IDENT_WITH_LOCATION S* expr:( ':' S* expr:expr { return expr; } )? ')' {
+    return {
+      type: 'MediaExpression',
+      feature: feature,
+      expression: expr,
+      start: location().start.offset,
+      end: location().end.offset
+    };
+  }
 
 page
   = PAGE_SYM S* selector:pseudo_page?
@@ -126,7 +174,9 @@ ruleset
       return {
         type: "RuleSet",
         selectors: buildList(selectorsHead, selectorsTail, 2),
-        declarations: buildList(declarationsHead, declarationsTail, 2)
+        declarations: buildList(declarationsHead, declarationsTail, 2),
+        start: location().start.offset,
+        end: location().end.offset
       };
     }
 
@@ -361,6 +411,7 @@ S_ = "s"i / "\\" "0"? "0"? "0"? "0"? [\x53\x73] ("\r\n" / [ \t\r\n\f])? / "\\s"i
 T  = "t"i / "\\" "0"? "0"? "0"? "0"? [\x54\x74] ("\r\n" / [ \t\r\n\f])? / "\\t"i { return "t"; }
 U  = "u"i / "\\" "0"? "0"? "0"? "0"? [\x55\x75] ("\r\n" / [ \t\r\n\f])? / "\\u"i { return "u"; }
 X  = "x"i / "\\" "0"? "0"? "0"? "0"? [\x58\x78] ("\r\n" / [ \t\r\n\f])? / "\\x"i { return "x"; }
+Y  = "y"i / "\\" "0"? "0"? "0"? "0"? [\x59\x79] ("\r\n" / [ \t\r\n\f])? / "\\y"i { return "y"; }
 Z  = "z"i / "\\" "0"? "0"? "0"? "0"? [\x5a\x7a] ("\r\n" / [ \t\r\n\f])? / "\\z"i { return "z"; }
 
 // Tokens
@@ -420,9 +471,6 @@ IMPORT_SYM "@import"
 
 PAGE_SYM "@page"
   = comment* "@" P A G E
-
-MEDIA_SYM "@media"
-  = comment* "@" M E D I A
 
 CHARSET_SYM "@charset"
   = comment* "@charset "

@@ -1,0 +1,106 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 87,
+	"charset": null,
+	"imports": [],
+	"rules": [
+		{
+			"type": "MediaRule",
+			"start": 0,
+			"end": 87,
+			"media": [
+				{
+					"type": null,
+					"expressions": [
+						{
+							"type": "MediaExpression",
+							"start": 7,
+							"end": 25,
+							"feature": {
+								"type": "Identifier",
+								"start": 8,
+								"end": 17,
+								"name": "min-width"
+							},
+							"expression": {
+								"type": "Quantity",
+								"start": 19,
+								"end": 24,
+								"unit": "px",
+								"value": 640
+							}
+						},
+						{
+							"type": "MediaExpression",
+							"start": 30,
+							"end": 48,
+							"feature": {
+								"type": "Identifier",
+								"start": 31,
+								"end": 40,
+								"name": "max-width"
+							},
+							"expression": {
+								"type": "Quantity",
+								"start": 42,
+								"end": 47,
+								"unit": "px",
+								"value": 800
+							}
+						},
+						{
+							"type": "MediaExpression",
+							"start": 53,
+							"end": 60,
+							"feature": {
+								"type": "Identifier",
+								"start": 54,
+								"end": 59,
+								"name": "color"
+							},
+							"expression": null
+						}
+					],
+					"not": false
+				}
+			],
+			"rules": [
+				{
+					"type": "RuleSet",
+					"start": 64,
+					"end": 85,
+					"selectors": [
+						{
+							"type": "SimpleSelector",
+							"start": 64,
+							"end": 65,
+							"element": "p",
+							"qualifiers": []
+						}
+					],
+					"declarations": [
+						{
+							"type": "Declaration",
+							"start": 70,
+							"end": 80,
+							"important": false,
+							"name": {
+								"type": "Identifier",
+								"start": 70,
+								"end": 75,
+								"name": "color"
+							},
+							"value": {
+								"type": "Identifier",
+								"start": 77,
+								"end": 80,
+								"name": "red"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

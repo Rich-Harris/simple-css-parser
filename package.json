@@ -4,6 +4,8 @@
   "author": "Rich Harris",
   "license": "MIT",
   "devDependencies": {
+    "console-group": "^0.3.3",
+    "json-stable-stringify": "^1.0.1",
     "marky": "^1.1.3",
     "mocha": "^3.2.0",
     "pegjs": "^0.10.0"

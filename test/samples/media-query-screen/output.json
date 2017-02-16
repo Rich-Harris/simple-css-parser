@@ -1,0 +1,81 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 63,
+	"charset": null,
+	"imports": [],
+	"rules": [
+		{
+			"type": "MediaRule",
+			"start": 0,
+			"end": 63,
+			"media": [
+				{
+					"type": {
+						"type": "Identifier",
+						"start": 7,
+						"end": 13,
+						"name": "screen"
+					},
+					"expressions": [
+						{
+							"type": "MediaExpression",
+							"start": 18,
+							"end": 36,
+							"feature": {
+								"type": "Identifier",
+								"start": 19,
+								"end": 28,
+								"name": "min-width"
+							},
+							"expression": {
+								"type": "Quantity",
+								"start": 30,
+								"end": 35,
+								"unit": "px",
+								"value": 640
+							}
+						}
+					],
+					"not": false
+				}
+			],
+			"rules": [
+				{
+					"type": "RuleSet",
+					"start": 40,
+					"end": 61,
+					"selectors": [
+						{
+							"type": "SimpleSelector",
+							"start": 40,
+							"end": 41,
+							"element": "p",
+							"qualifiers": []
+						}
+					],
+					"declarations": [
+						{
+							"type": "Declaration",
+							"start": 46,
+							"end": 56,
+							"important": false,
+							"name": {
+								"type": "Identifier",
+								"start": 46,
+								"end": 51,
+								"name": "color"
+							},
+							"value": {
+								"type": "Identifier",
+								"start": 53,
+								"end": 56,
+								"name": "red"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

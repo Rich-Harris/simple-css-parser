@@ -7,6 +7,8 @@
 	"rules": [
 		{
 			"type": "RuleSet",
+			"start": 0,
+			"end": 34,
 			"selectors": [
 				{
 					"type": "SimpleSelector",
