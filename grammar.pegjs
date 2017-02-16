@@ -136,7 +136,9 @@ selector
         type: "Selector",
         combinator: combinator,
         left: left,
-        right: right
+        right: right,
+        start: location().start.offset,
+        end: location().end.offset
       };
     }
   / left:simple_selector S+ right:selector {
@@ -144,7 +146,9 @@ selector
         type: "Selector",
         combinator: " ",
         left: left,
-        right: right
+        right: right,
+        start: location().start.offset,
+        end: location().end.offset
       };
     }
   / selector:simple_selector S* { return selector; }
