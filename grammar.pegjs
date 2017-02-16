@@ -185,14 +185,15 @@ element_name
 attrib
   = "[" S*
     attribute:IDENT S*
-    operatorAndValue:(("=" / INCLUDES / DASHMATCH) S* (IDENT / STRING) S*)?
+    operatorAndValue:(comment* ("=" / "^=" / "*=" / "~=" / "|=" / "$=") S* (IDENT / STRING) S* ("i" / "I")?)?
     "]"
     {
       return {
         type: "AttributeSelector",
         attribute: attribute,
-        operator: extractOptional(operatorAndValue, 0),
-        value: extractOptional(operatorAndValue, 2)
+        operator: extractOptional(operatorAndValue, 1),
+        value: extractOptional(operatorAndValue, 3),
+        casesensitive: !extractOptional(operatorAndValue, 5)
       };
     }
 
@@ -356,6 +357,12 @@ CDO "<!--"
 
 CDC "-->"
   = comment* "-->"
+
+BEGINS_WITH "^="
+  = comment* "^="
+
+CONTAINS "*="
+  = comment* "*="
 
 INCLUDES "~="
   = comment* "~="
