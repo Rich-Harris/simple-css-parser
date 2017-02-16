@@ -184,8 +184,8 @@ element_name
 
 attrib
   = "[" S*
-    attribute:IDENT S*
-    operatorAndValue:(comment* ("=" / "^=" / "*=" / "~=" / "|=" / "$=") S* (IDENT / STRING) S* ("i" / "I")?)?
+    attribute:IDENT_WITH_LOCATION S*
+    operatorAndValue:(comment* ("=" / "^=" / "*=" / "~=" / "|=" / "$=") S* (IDENT_WITH_LOCATION / STRING_WITH_LOCATION) S* ("i" / "I")?)?
     "]"
     {
       return {
@@ -373,8 +373,28 @@ DASHMATCH "|="
 STRING "string"
   = comment* string:string { return string; }
 
+STRING_WITH_LOCATION
+  = string:string {
+    return {
+      type: "Literal",
+      start: location().start.offset,
+      end: location().end.offset,
+      value: string
+    }
+  }
+
 IDENT "identifier"
   = comment* ident:ident { return ident; }
+
+IDENT_WITH_LOCATION
+  = ident:ident {
+    return {
+      type: "Identifier",
+      start: location().start.offset,
+      end: location().end.offset,
+      name: ident
+    }
+  }
 
 HASH "hash"
   = comment* "#" name:name { return "#" + name; }

@@ -16,9 +16,19 @@
 					"qualifiers": [
 						{
 							"type": "AttributeSelector",
-							"attribute": "type",
+							"attribute": {
+								"type": "Identifier",
+								"start": 1,
+								"end": 5,
+								"name": "type"
+							},
 							"operator": "=",
-							"value": "email",
+							"value": {
+								"type": "Literal",
+								"start": 6,
+								"end": 13,
+								"value": "email"
+							},
 							"casesensitive": false
 						}
 					]
