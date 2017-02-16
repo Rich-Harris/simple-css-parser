@@ -1,0 +1,34 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 19,
+	"charset": null,
+	"imports": [],
+	"rules": [
+		{
+			"type": "RuleSet",
+			"selectors": [
+				{
+					"type": "SimpleSelector",
+					"start": 0,
+					"end": 1,
+					"element": "p",
+					"qualifiers": []
+				}
+			],
+			"declarations": [
+				{
+					"type": "Declaration",
+					"start": 5,
+					"end": 15,
+					"important": false,
+					"name": "color",
+					"value": {
+						"type": "Ident",
+						"value": "red"
+					}
+				}
+			]
+		}
+	]
+}

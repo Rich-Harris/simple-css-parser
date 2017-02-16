@@ -1,0 +1,41 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 27,
+	"charset": null,
+	"imports": [],
+	"rules": [
+		{
+			"type": "RuleSet",
+			"selectors": [
+				{
+					"type": "SimpleSelector",
+					"start": 0,
+					"end": 1,
+					"element": "p",
+					"qualifiers": []
+				},
+				{
+					"type": "SimpleSelector",
+					"start": 3,
+					"end": 9,
+					"element": "strong",
+					"qualifiers": []
+				}
+			],
+			"declarations": [
+				{
+					"type": "Declaration",
+					"start": 13,
+					"end": 23,
+					"important": false,
+					"name": "color",
+					"value": {
+						"type": "Ident",
+						"value": "red"
+					}
+				}
+			]
+		}
+	]
+}
