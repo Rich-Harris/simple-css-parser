@@ -1,4 +1,8 @@
 {
+  "name": "simple-css-parser",
+  "version": "2.0.0",
+  "author": "Rich Harris",
+  "license": "MIT",
   "devDependencies": {
     "marky": "^1.1.3",
     "mocha": "^3.2.0",
@@ -10,9 +14,7 @@
     "pretest": "npm run build",
     "prepublish": "npm test"
   },
-  "name": "simple-css-parser",
   "description": "Parses CSS into JSON",
-  "version": "1.0.0",
   "main": "index.js",
   "module": "index.es.js",
   "directories": {
@@ -27,8 +29,6 @@
     "parser",
     "ast"
   ],
-  "author": "Rich Harris",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Rich-Harris/simple-css-parser/issues"
   },
