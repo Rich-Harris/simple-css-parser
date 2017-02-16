@@ -115,9 +115,6 @@ combinator
   = "+" S* { return "+"; }
   / ">" S* { return ">"; }
 
-property
-  = name:IDENT S* { return name; }
-
 ruleset
   = selectorsHead:selector
     selectorsTail:("," S* selector)*
@@ -212,7 +209,7 @@ pseudo
     { return { type: "PseudoSelector", value: value }; }
 
 declaration
-  = name:property ':' S* value:expr prio:prio? {
+  = name:IDENT_WITH_LOCATION S* ':' S* value:expr prio:prio? {
       return {
         type: "Declaration",
         name: name,
@@ -235,23 +232,38 @@ term
     {
       return {
         type: "Quantity",
+        start: location().start.offset,
+        end: location().end.offset,
         value: quantity.value,
         unit: quantity.unit
       };
     }
-  / value:STRING S* { return { type: "String", value: value }; }
-  / value:URI S*    { return { type: "URI",    value: value }; }
+  / value:STRING_WITH_LOCATION S* { return value; }
+  / value:URI_WITH_LOCATION S*    { return value; }
   / function
   / hexcolor
-  / value:IDENT S*  { return { type: "Ident",  value: value }; }
+  / value:IDENT_WITH_LOCATION S*  { return value; }
 
 function
   = name:FUNCTION S* params:expr ")" S* {
-      return { type: "Function", name: name, params: params };
+      return {
+        type: "Function",
+        start: location().start.offset,
+        end: location().end.offset,
+        name: name,
+        params: params
+      };
     }
 
 hexcolor
-  = value:HASH S* { return { type: "Hexcolor", value: value }; }
+  = value:HASH S* {
+    return {
+      type: "Hexcolor",
+      start: location().start.offset,
+      end: location().end.offset,
+      value: value
+    };
+  }
 
 // ----- G.2 Lexical scanner -----
 
@@ -451,6 +463,16 @@ NUMBER "number"
 URI "uri"
   = comment* U R L "("i w url:string w ")" { return url; }
   / comment* U R L "("i w url:url w ")"    { return url; }
+
+URI_WITH_LOCATION
+  = URI:URI {
+    return {
+      type: "URI",
+      start: location().start.offset,
+      end: location().end.offset,
+      value: URI
+    };
+  }
 
 FUNCTION "function"
   = comment* name:ident "(" { return name; }

@@ -40,10 +40,17 @@
 					"start": 15,
 					"end": 25,
 					"important": false,
-					"name": "color",
+					"name": {
+						"type": "Identifier",
+						"start": 15,
+						"end": 20,
+						"name": "color"
+					},
 					"value": {
-						"type": "Ident",
-						"value": "red"
+						"type": "Identifier",
+						"start": 22,
+						"end": 25,
+						"name": "red"
 					}
 				}
 			]
