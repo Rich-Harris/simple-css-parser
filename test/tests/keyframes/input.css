@@ -1,0 +1,9 @@
+@keyframes foo {
+    from { left: 0; }
+    to { left: 100px; }
+}
+
+@-webkit-keyframes bar {
+    0% { left: 0; }
+    100% { left: 100px; }
+}

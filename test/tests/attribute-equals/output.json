@@ -1,0 +1,63 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 29,
+	"charset": null,
+	"imports": [],
+	"rules": [
+		{
+			"type": "RuleSet",
+			"start": 0,
+			"end": 29,
+			"selectors": [
+				{
+					"type": "SimpleSelector",
+					"start": 0,
+					"end": 11,
+					"element": "*",
+					"qualifiers": [
+						{
+							"type": "AttributeSelector",
+							"start": 0,
+							"end": 11,
+							"attribute": {
+								"type": "Identifier",
+								"start": 1,
+								"end": 4,
+								"name": "foo"
+							},
+							"operator": "=",
+							"value": {
+								"type": "Literal",
+								"start": 5,
+								"end": 10,
+								"value": "bar"
+							},
+							"casesensitive": true
+						}
+					]
+				}
+			],
+			"declarations": [
+				{
+					"type": "Declaration",
+					"start": 15,
+					"end": 25,
+					"important": false,
+					"name": {
+						"type": "Identifier",
+						"start": 15,
+						"end": 20,
+						"name": "color"
+					},
+					"value": {
+						"type": "Identifier",
+						"start": 22,
+						"end": 25,
+						"name": "red"
+					}
+				}
+			]
+		}
+	]
+}

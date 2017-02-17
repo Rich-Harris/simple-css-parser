@@ -1,37 +1,30 @@
 {
 	"type": "StyleSheet",
 	"start": 0,
-	"end": 34,
+	"end": 29,
 	"charset": null,
 	"imports": [],
 	"rules": [
 		{
 			"type": "RuleSet",
 			"start": 0,
-			"end": 34,
+			"end": 29,
 			"selectors": [
 				{
 					"type": "SimpleSelector",
 					"start": 0,
-					"end": 16,
-					"element": "*",
+					"end": 11,
+					"element": "p",
 					"qualifiers": [
 						{
-							"type": "AttributeSelector",
-							"attribute": {
-								"type": "Identifier",
-								"start": 1,
-								"end": 5,
-								"name": "type"
-							},
-							"operator": "=",
+							"type": "PseudoSelector",
+							"start": 1,
+							"end": 11,
 							"value": {
-								"type": "Literal",
-								"start": 6,
-								"end": 13,
-								"value": "email"
-							},
-							"casesensitive": false
+								"type": "Function",
+								"name": "not",
+								"param": ".foo"
+							}
 						}
 					]
 				}
@@ -39,19 +32,19 @@
 			"declarations": [
 				{
 					"type": "Declaration",
-					"start": 20,
-					"end": 30,
+					"start": 15,
+					"end": 25,
 					"important": false,
 					"name": {
 						"type": "Identifier",
-						"start": 20,
-						"end": 25,
+						"start": 15,
+						"end": 20,
 						"name": "color"
 					},
 					"value": {
 						"type": "Identifier",
-						"start": 27,
-						"end": 30,
+						"start": 22,
+						"end": 25,
 						"name": "red"
 					}
 				}
