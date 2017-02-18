@@ -28,13 +28,9 @@ export function parse ( css, options = {} ) {
 	css = css.replace( /\s+$/, '' );
 
 	const parser = {
-		index: 0,
 		css,
-		stack: [],
-
-		current () {
-			return this.stack[ this.stack.length - 1 ];
-		},
+		index: 0,
+		depth: 0,
 
 		error ( message, index = this.index ) {
 			throw new ParseError( message, this.css, index, options.filename );
@@ -127,8 +123,6 @@ export function parse ( css, options = {} ) {
 		}
 	};
 
-	parser.stack.push( parser.result );
-
 	parser.advance();
 
 	while ( parser.index < parser.css.length ) {
@@ -141,10 +135,6 @@ export function parse ( css, options = {} ) {
 		}
 
 		parser.advance();
-	}
-
-	if ( parser.stack.length > 1 ) {
-		parser.error( 'Unexpected end of input' );
 	}
 
 	return parser.result;

@@ -15,6 +15,8 @@ export default function readSelectors ( parser ) {
 		parser.advance();
 	}
 
+	if ( !selectors.length ) return;
+
 	parser.eat( '{', true );
 	return selectors;
 }
@@ -43,15 +45,34 @@ function readSelector ( parser ) {
 		parser.advance();
 	}
 
+	const selector = {
+		type: 'SimpleSelector',
+		element,
+		qualifiers,
+		start,
+		end
+	};
+
 	if ( parser.match( ',' ) || parser.match( '{' ) ) {
-		return {
-			type: 'SimpleSelector',
-			element,
-			qualifiers,
-			start,
-			end
-		};
+		return selector;
 	}
 
-	// TODO combinators
+	if ( !element && !qualifiers.length ) return;
+
+	const combinator = parser.read( /^(?:\+|~|>)/ ) || ' ';
+	parser.advance();
+	const right = readSelector( parser );
+
+	if ( !right ) {
+		parser.error( 'Expected a selector' );
+	}
+
+	return {
+		type: 'Selector',
+		start,
+		end: parser.index,
+		left: selector,
+		combinator,
+		right
+	};
 }

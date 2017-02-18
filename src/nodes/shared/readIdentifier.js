@@ -1,9 +1,9 @@
-import ident from '../tokens/ident.js';
+const pattern = /[a-z\-][a-z\-]*/i;
 
 export default function readIdentifier ( parser ) {
 	const start = parser.index;
 
-	const name = ident( parser );
+	const name = parser.read( pattern );
 	if ( !name ) return;
 
 	return {

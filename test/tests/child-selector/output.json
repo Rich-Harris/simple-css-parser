@@ -1,14 +1,13 @@
 {
 	"type": "StyleSheet",
 	"start": 0,
-	"end": 25,
-	"charset": null,
-	"imports": [],
-	"rules": [
+	"end": 24,
+	"comments": [],
+	"body": [
 		{
-			"type": "RuleSet",
+			"type": "QualifiedRule",
 			"start": 0,
-			"end": 25,
+			"end": 24,
 			"selectors": [
 				{
 					"type": "Selector",
@@ -19,14 +18,24 @@
 						"type": "SimpleSelector",
 						"start": 0,
 						"end": 3,
-						"element": "div",
+						"element": {
+							"type": "Identifier",
+							"start": 0,
+							"end": 3,
+							"name": "div"
+						},
 						"qualifiers": []
 					},
 					"right": {
 						"type": "SimpleSelector",
 						"start": 6,
 						"end": 7,
-						"element": "p",
+						"element": {
+							"type": "Identifier",
+							"start": 6,
+							"end": 7,
+							"name": "p"
+						},
 						"qualifiers": []
 					}
 				}
@@ -37,17 +46,17 @@
 					"start": 11,
 					"end": 21,
 					"important": false,
-					"name": {
+					"key": {
 						"type": "Identifier",
 						"start": 11,
 						"end": 16,
 						"name": "color"
 					},
 					"value": {
-						"type": "Identifier",
+						"type": "Value",
 						"start": 18,
 						"end": 21,
-						"name": "red"
+						"data": "red"
 					}
 				}
 			]

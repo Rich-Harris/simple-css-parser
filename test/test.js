@@ -15,11 +15,17 @@ const keyOrders = {
 	start: 2,
 	end: 3,
 
+	key: 10,
+
 	selectors: 11,
 	declarations: 12,
 
 	feature: 21,
 	expression: 22,
+
+	subtype: 29,
+	name: 30,
+	animationname: 31,
 
 	comments: 90,
 	body: 91

@@ -67,7 +67,7 @@
 			],
 			"rules": [
 				{
-					"type": "RuleSet",
+					"type": "QualifiedRule",
 					"start": 64,
 					"end": 85,
 					"selectors": [

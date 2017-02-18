@@ -1,1 +1,162 @@
-{}
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 138,
+	"comments": [],
+	"body": [
+		{
+			"type": "AtRule",
+			"start": 0,
+			"end": 64,
+			"subtype": "keyframes",
+			"name": {
+				"type": "Identifier",
+				"start": 1,
+				"end": 10,
+				"name": "keyframes"
+			},
+			"animationname": {
+				"type": "Identifier",
+				"start": 11,
+				"end": 14,
+				"name": "foo"
+			},
+			"body": {
+				"type": "Keyframes",
+				"start": 15,
+				"end": 64,
+				"frames": [
+					{
+						"type": "Keyframe",
+						"start": 21,
+						"end": 38,
+						"key": "from",
+						"declarations": [
+							{
+								"type": "Declaration",
+								"start": 28,
+								"end": 35,
+								"key": {
+									"type": "Identifier",
+									"start": 28,
+									"end": 32,
+									"name": "left"
+								},
+								"important": false,
+								"value": {
+									"type": "Value",
+									"start": 34,
+									"end": 35,
+									"data": "0"
+								}
+							}
+						]
+					},
+					{
+						"type": "Keyframe",
+						"start": 43,
+						"end": 62,
+						"key": "to",
+						"declarations": [
+							{
+								"type": "Declaration",
+								"start": 48,
+								"end": 59,
+								"key": {
+									"type": "Identifier",
+									"start": 48,
+									"end": 52,
+									"name": "left"
+								},
+								"important": false,
+								"value": {
+									"type": "Value",
+									"start": 54,
+									"end": 59,
+									"data": "100px"
+								}
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"type": "AtRule",
+			"start": 66,
+			"end": 138,
+			"subtype": "keyframes",
+			"name": {
+				"type": "Identifier",
+				"start": 67,
+				"end": 84,
+				"name": "-webkit-keyframes"
+			},
+			"animationname": {
+				"type": "Identifier",
+				"start": 85,
+				"end": 88,
+				"name": "bar"
+			},
+			"body": {
+				"type": "Keyframes",
+				"start": 89,
+				"end": 138,
+				"frames": [
+					{
+						"type": "Keyframe",
+						"start": 95,
+						"end": 110,
+						"key": "0%",
+						"declarations": [
+							{
+								"type": "Declaration",
+								"start": 100,
+								"end": 107,
+								"key": {
+									"type": "Identifier",
+									"start": 100,
+									"end": 104,
+									"name": "left"
+								},
+								"important": false,
+								"value": {
+									"type": "Value",
+									"start": 106,
+									"end": 107,
+									"data": "0"
+								}
+							}
+						]
+					},
+					{
+						"type": "Keyframe",
+						"start": 115,
+						"end": 136,
+						"key": "100%",
+						"declarations": [
+							{
+								"type": "Declaration",
+								"start": 122,
+								"end": 133,
+								"key": {
+									"type": "Identifier",
+									"start": 122,
+									"end": 126,
+									"name": "left"
+								},
+								"important": false,
+								"value": {
+									"type": "Value",
+									"start": 128,
+									"end": 133,
+									"data": "100px"
+								}
+							}
+						]
+					}
+				]
+			}
+		}
+	]
+}
