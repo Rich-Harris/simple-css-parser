@@ -1,5 +1,4 @@
 .DS_Store
 node_modules
-index.js
-index.es.js
 _actual.json
+dist

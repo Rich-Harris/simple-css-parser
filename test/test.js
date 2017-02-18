@@ -2,11 +2,11 @@ const fs = require( 'fs' );
 const path = require( 'path' );
 const assert = require( 'assert' );
 const glob = require( 'glob' );
-const framer = require( 'code-frame' );
 const marky = require( 'marky' );
 const stringify = require( 'json-stable-stringify' );
 
 require( 'console-group' ).install();
+require( 'source-map-support' ).install();
 
 const css = require( '../' );
 
@@ -19,7 +19,10 @@ const keyOrders = {
 	declarations: 12,
 
 	feature: 21,
-	expression: 22
+	expression: 22,
+
+	comments: 90,
+	body: 91
 };
 
 function exists ( file ) {
@@ -56,8 +59,11 @@ describe( 'simple-css-parser', () => {
 					actual = css.parse( input );
 					marky.stop( dir );
 				} catch ( err ) {
-					const frame = framer( input, err.location.start.line, err.location.start.column );
-					throw new Error( `${err.message}\n${frame}` );
+					if ( err.name === 'ParseError' ) {
+						throw new Error( `${err.message}\n${err.frame}` );
+					}
+
+					throw err;
 				}
 
 				const json = stringify( actual, {
@@ -97,8 +103,11 @@ describe( 'simple-css-parser', () => {
 					const actual = css.parse( input );
 					marky.stop( file );
 				} catch ( err ) {
-					const frame = framer( input, err.location.start.line, err.location.start.column );
-					throw new Error( `${err.message}\n${frame}` );
+					if ( err.name === 'ParseError' ) {
+						throw new Error( `${err.message}\n${err.frame}` );
+					}
+
+					throw err;
 				}
 			});
 		});
