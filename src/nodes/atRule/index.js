@@ -1,12 +1,14 @@
 import augmentCharset from './augmentCharset.js';
 import augmentImport from './augmentImport.js';
 import augmentKeyframes from './augmentKeyframes.js';
+import augmentMedia from './augmentMedia.js';
 import augmentNamespace from './augmentNamespace.js';
 import readIdentifier from '../shared/readIdentifier.js';
 
 const augmenters = {
 	charset: augmentCharset,
 	import: augmentImport,
+	media: augmentMedia,
 	namespace: augmentNamespace,
 
 	keyframes: augmentKeyframes

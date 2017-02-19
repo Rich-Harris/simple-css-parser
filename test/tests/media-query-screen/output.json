@@ -1,56 +1,57 @@
 {
 	"type": "StyleSheet",
 	"start": 0,
-	"end": 63,
-	"charset": null,
-	"imports": [],
-	"rules": [
+	"end": 62,
+	"comments": [],
+	"body": [
 		{
-			"type": "MediaRule",
+			"type": "AtRule",
 			"start": 0,
-			"end": 63,
-			"media": [
+			"end": 62,
+			"media": "screen",
+			"not": false,
+			"expressions": [
 				{
-					"type": {
+					"type": "MediaQuery",
+					"start": 18,
+					"end": 36,
+					"key": {
 						"type": "Identifier",
-						"start": 7,
-						"end": 13,
-						"name": "screen"
+						"start": 19,
+						"end": 28,
+						"name": "min-width"
 					},
-					"expressions": [
-						{
-							"type": "MediaExpression",
-							"start": 18,
-							"end": 36,
-							"feature": {
-								"type": "Identifier",
-								"start": 19,
-								"end": 28,
-								"name": "min-width"
-							},
-							"expression": {
-								"type": "Quantity",
-								"start": 30,
-								"end": 35,
-								"unit": "px",
-								"value": 640
-							}
-						}
-					],
-					"not": false
+					"value": {
+						"type": "Value",
+						"start": 30,
+						"end": 35,
+						"data": "640px"
+					}
 				}
 			],
-			"rules": [
+			"subtype": "media",
+			"name": {
+				"type": "Identifier",
+				"start": 1,
+				"end": 6,
+				"name": "media"
+			},
+			"body": [
 				{
 					"type": "QualifiedRule",
 					"start": 40,
-					"end": 61,
+					"end": 60,
 					"selectors": [
 						{
 							"type": "SimpleSelector",
 							"start": 40,
 							"end": 41,
-							"element": "p",
+							"element": {
+								"type": "Identifier",
+								"start": 40,
+								"end": 41,
+								"name": "p"
+							},
 							"qualifiers": []
 						}
 					],
@@ -59,18 +60,18 @@
 							"type": "Declaration",
 							"start": 46,
 							"end": 56,
-							"important": false,
-							"name": {
+							"key": {
 								"type": "Identifier",
 								"start": 46,
 								"end": 51,
 								"name": "color"
 							},
+							"important": false,
 							"value": {
-								"type": "Identifier",
+								"type": "Value",
 								"start": 53,
 								"end": 56,
-								"name": "red"
+								"data": "red"
 							}
 						}
 					]

@@ -1,6 +1,5 @@
 import readQualifier from './readQualifier.js';
-
-const elementPattern = /^[a-z][a-z0-9\-]*/i;
+import * as patterns from '../../patterns.js';
 
 export default function readSelectors ( parser ) {
 	const selectors = [];
@@ -24,7 +23,7 @@ export default function readSelectors ( parser ) {
 function readSelector ( parser ) {
 	const start = parser.index;
 
-	const elementName = parser.read( elementPattern );
+	const elementName = parser.read( patterns.element );
 	const element = elementName ? {
 		type: 'Identifier',
 		name: elementName,

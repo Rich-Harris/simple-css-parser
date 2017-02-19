@@ -131,7 +131,7 @@ export function parse ( css, options = {} ) {
 		if ( node ) {
 			parser.result.body.push( node );
 		} else {
-			parser.error( 'Expected comment or rule' );
+			parser.error( 'Expected a rule' );
 		}
 
 		parser.advance();

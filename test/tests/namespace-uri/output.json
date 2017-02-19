@@ -1,0 +1,27 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 34,
+	"comments": [],
+	"body": [
+		{
+			"type": "AtRule",
+			"start": 0,
+			"end": 34,
+			"subtype": "namespace",
+			"name": {
+				"type": "Identifier",
+				"start": 1,
+				"end": 10,
+				"name": "namespace"
+			},
+			"namespace": {
+				"type": "Uri",
+				"start": 11,
+				"end": 33,
+				"value": "XML-namespace-URL"
+			},
+			"prefix": null
+		}
+	]
+}

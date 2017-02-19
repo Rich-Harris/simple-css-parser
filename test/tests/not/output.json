@@ -1,29 +1,35 @@
 {
 	"type": "StyleSheet",
 	"start": 0,
-	"end": 29,
-	"charset": null,
-	"imports": [],
-	"rules": [
+	"end": 28,
+	"comments": [],
+	"body": [
 		{
 			"type": "QualifiedRule",
 			"start": 0,
-			"end": 29,
+			"end": 28,
 			"selectors": [
 				{
 					"type": "SimpleSelector",
 					"start": 0,
 					"end": 11,
-					"element": "p",
+					"element": {
+						"type": "Identifier",
+						"start": 0,
+						"end": 1,
+						"name": "p"
+					},
 					"qualifiers": [
 						{
-							"type": "PseudoSelector",
+							"type": "PseudoClass",
 							"start": 1,
 							"end": 11,
-							"value": {
-								"type": "Function",
-								"name": "not",
-								"param": ".foo"
+							"name": "not",
+							"parameter": {
+								"type": "ClassQualifier",
+								"start": 6,
+								"end": 10,
+								"value": "foo"
 							}
 						}
 					]
@@ -34,18 +40,18 @@
 					"type": "Declaration",
 					"start": 15,
 					"end": 25,
-					"important": false,
-					"name": {
+					"key": {
 						"type": "Identifier",
 						"start": 15,
 						"end": 20,
 						"name": "color"
 					},
+					"important": false,
 					"value": {
-						"type": "Identifier",
+						"type": "Value",
 						"start": 22,
 						"end": 25,
-						"name": "red"
+						"data": "red"
 					}
 				}
 			]

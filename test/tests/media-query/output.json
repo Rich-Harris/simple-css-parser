@@ -1,51 +1,57 @@
 {
 	"type": "StyleSheet",
 	"start": 0,
-	"end": 52,
-	"charset": null,
-	"imports": [],
-	"rules": [
+	"end": 51,
+	"comments": [],
+	"body": [
 		{
-			"type": "MediaRule",
+			"type": "AtRule",
 			"start": 0,
-			"end": 52,
-			"media": [
+			"end": 51,
+			"media": null,
+			"not": false,
+			"expressions": [
 				{
-					"type": null,
-					"expressions": [
-						{
-							"type": "MediaExpression",
-							"start": 7,
-							"end": 25,
-							"feature": {
-								"type": "Identifier",
-								"start": 8,
-								"end": 17,
-								"name": "min-width"
-							},
-							"expression": {
-								"type": "Quantity",
-								"start": 19,
-								"end": 24,
-								"unit": "px",
-								"value": 640
-							}
-						}
-					],
-					"not": false
+					"type": "MediaQuery",
+					"start": 7,
+					"end": 25,
+					"key": {
+						"type": "Identifier",
+						"start": 8,
+						"end": 17,
+						"name": "min-width"
+					},
+					"value": {
+						"type": "Value",
+						"start": 19,
+						"end": 24,
+						"data": "640px"
+					}
 				}
 			],
-			"rules": [
+			"subtype": "media",
+			"name": {
+				"type": "Identifier",
+				"start": 1,
+				"end": 6,
+				"name": "media"
+			},
+			"body": [
 				{
 					"type": "QualifiedRule",
 					"start": 29,
-					"end": 50,
+					"end": 49,
 					"selectors": [
 						{
 							"type": "SimpleSelector",
 							"start": 29,
 							"end": 30,
-							"element": "p",
+							"element": {
+								"type": "Identifier",
+								"start": 29,
+								"end": 30,
+								"name": "p"
+							},
 							"qualifiers": []
 						}
 					],
@@ -54,18 +60,18 @@
 							"type": "Declaration",
 							"start": 35,
 							"end": 45,
-							"important": false,
-							"name": {
+							"key": {
 								"type": "Identifier",
 								"start": 35,
 								"end": 40,
 								"name": "color"
 							},
+							"important": false,
 							"value": {
-								"type": "Identifier",
+								"type": "Value",
 								"start": 42,
 								"end": 45,
-								"name": "red"
+								"data": "red"
 							}
 						}
 					]

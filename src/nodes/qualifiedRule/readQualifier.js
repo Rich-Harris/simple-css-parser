@@ -1,6 +1,7 @@
 import ident from '../tokens/ident.js';
 import readString from '../shared/readString.js';
 import readIdentifier from '../shared/readIdentifier.js';
+import readPseudoClassQualifier from './readPseudoClassQualifier.js';
 
 export default function readQualifier ( parser ) {
 	return (
@@ -55,7 +56,7 @@ function readPseudoElementQualifier ( parser ) {
 
 	let name;
 
-	const legacy = parser.match( /^:(?:first-line|first-letter|before|after)/ );
+	const legacy = parser.read( /^:(?:first-line|first-letter|before|after)/ );
 
 	if ( legacy ) {
 		name = legacy.slice( 1 );
@@ -66,27 +67,6 @@ function readPseudoElementQualifier ( parser ) {
 
 	return {
 		type: 'PseudoElement',
-		name,
-		start,
-		end: parser.index
-	};
-}
-
-function readPseudoClassQualifier ( parser ) {
-	const start = parser.index;
-
-	if ( !parser.eat( ':' ) ) return;
-
-	const name = parser.read( pattern );
-
-	if ( !name ) {
-		parser.error( 'Expected pseudo-class name' );
-	}
-
-	// TODO functions
-
-	return {
-		type: 'PseudoClass',
 		name,
 		start,
 		end: parser.index

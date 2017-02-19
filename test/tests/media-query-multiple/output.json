@@ -1,81 +1,86 @@
 {
 	"type": "StyleSheet",
 	"start": 0,
-	"end": 87,
-	"charset": null,
-	"imports": [],
-	"rules": [
+	"end": 86,
+	"comments": [],
+	"body": [
 		{
-			"type": "MediaRule",
+			"type": "AtRule",
 			"start": 0,
-			"end": 87,
-			"media": [
+			"end": 86,
+			"media": null,
+			"not": false,
+			"expressions": [
 				{
-					"type": null,
-					"expressions": [
-						{
-							"type": "MediaExpression",
-							"start": 7,
-							"end": 25,
-							"feature": {
-								"type": "Identifier",
-								"start": 8,
-								"end": 17,
-								"name": "min-width"
-							},
-							"expression": {
-								"type": "Quantity",
-								"start": 19,
-								"end": 24,
-								"unit": "px",
-								"value": 640
-							}
-						},
-						{
-							"type": "MediaExpression",
-							"start": 30,
-							"end": 48,
-							"feature": {
-								"type": "Identifier",
-								"start": 31,
-								"end": 40,
-								"name": "max-width"
-							},
-							"expression": {
-								"type": "Quantity",
-								"start": 42,
-								"end": 47,
-								"unit": "px",
-								"value": 800
-							}
-						},
-						{
-							"type": "MediaExpression",
-							"start": 53,
-							"end": 60,
-							"feature": {
-								"type": "Identifier",
-								"start": 54,
-								"end": 59,
-								"name": "color"
-							},
-							"expression": null
-						}
-					],
-					"not": false
+					"type": "MediaQuery",
+					"start": 7,
+					"end": 25,
+					"key": {
+						"type": "Identifier",
+						"start": 8,
+						"end": 17,
+						"name": "min-width"
+					},
+					"value": {
+						"type": "Value",
+						"start": 19,
+						"end": 24,
+						"data": "640px"
+					}
+				},
+				{
+					"type": "MediaQuery",
+					"start": 30,
+					"end": 48,
+					"key": {
+						"type": "Identifier",
+						"start": 31,
+						"end": 40,
+						"name": "max-width"
+					},
+					"value": {
+						"type": "Value",
+						"start": 42,
+						"end": 47,
+						"data": "800px"
+					}
+				},
+				{
+					"type": "MediaQuery",
+					"start": 53,
+					"end": 60,
+					"key": {
+						"type": "Identifier",
+						"start": 54,
+						"end": 59,
+						"name": "color"
+					},
+					"value": null
 				}
 			],
-			"rules": [
+			"subtype": "media",
+			"name": {
+				"type": "Identifier",
+				"start": 1,
+				"end": 6,
+				"name": "media"
+			},
+			"body": [
 				{
 					"type": "QualifiedRule",
 					"start": 64,
-					"end": 85,
+					"end": 84,
 					"selectors": [
 						{
 							"type": "SimpleSelector",
 							"start": 64,
 							"end": 65,
-							"element": "p",
+							"element": {
+								"type": "Identifier",
+								"start": 64,
+								"end": 65,
+								"name": "p"
+							},
 							"qualifiers": []
 						}
 					],
@@ -84,18 +89,18 @@
 							"type": "Declaration",
 							"start": 70,
 							"end": 80,
-							"important": false,
-							"name": {
+							"key": {
 								"type": "Identifier",
 								"start": 70,
 								"end": 75,
 								"name": "color"
 							},
+							"important": false,
 							"value": {
-								"type": "Identifier",
+								"type": "Value",
 								"start": 77,
 								"end": 80,
-								"name": "red"
+								"data": "red"
 							}
 						}
 					]

@@ -3,6 +3,7 @@ const path = require( 'path' );
 const assert = require( 'assert' );
 const glob = require( 'glob' );
 const marky = require( 'marky' );
+const chalk = require( 'chalk' );
 const stringify = require( 'json-stable-stringify' );
 
 require( 'console-group' ).install();
@@ -20,8 +21,11 @@ const keyOrders = {
 	selectors: 11,
 	declarations: 12,
 
+	media: 18,
+	not: 19,
 	feature: 21,
 	expression: 22,
+	expressions: 23,
 
 	subtype: 29,
 	name: 30,
@@ -66,7 +70,7 @@ describe( 'simple-css-parser', () => {
 					marky.stop( dir );
 				} catch ( err ) {
 					if ( err.name === 'ParseError' ) {
-						throw new Error( `${err.message}\n${err.frame}` );
+						console.error( chalk.red( `${err.message}\n${err.frame}` ) );
 					}
 
 					throw err;
@@ -110,7 +114,7 @@ describe( 'simple-css-parser', () => {
 					marky.stop( file );
 				} catch ( err ) {
 					if ( err.name === 'ParseError' ) {
-						throw new Error( `${err.message}\n${err.frame}` );
+						console.error( chalk.red( `${err.message}\n${err.frame}` ) );
 					}
 
 					throw err;

@@ -1,26 +1,25 @@
 {
 	"type": "StyleSheet",
 	"start": 0,
-	"end": 30,
-	"charset": null,
-	"imports": [],
-	"rules": [
+	"end": 29,
+	"comments": [],
+	"body": [
 		{
 			"type": "QualifiedRule",
 			"start": 0,
-			"end": 30,
+			"end": 29,
 			"selectors": [
 				{
 					"type": "SimpleSelector",
 					"start": 0,
 					"end": 12,
-					"element": "*",
+					"element": null,
 					"qualifiers": [
 						{
-							"type": "ClassSelector",
+							"type": "ClassQualifier",
 							"start": 0,
 							"end": 4,
-							"class": "foo"
+							"value": "foo"
 						},
 						{
 							"type": "PseudoElement",
@@ -37,17 +36,17 @@
 					"start": 16,
 					"end": 26,
 					"important": false,
-					"name": {
+					"key": {
 						"type": "Identifier",
 						"start": 16,
 						"end": 21,
 						"name": "color"
 					},
 					"value": {
-						"type": "Identifier",
+						"type": "Value",
 						"start": 23,
 						"end": 26,
-						"name": "red"
+						"data": "red"
 					}
 				}
 			]
