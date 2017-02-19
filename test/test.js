@@ -30,6 +30,7 @@ const keyOrders = {
 	subtype: 29,
 	name: 30,
 	animationname: 31,
+	queries: 32,
 
 	comments: 90,
 	body: 91

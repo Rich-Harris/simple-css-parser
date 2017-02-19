@@ -56,7 +56,7 @@ function readPseudoElementQualifier ( parser ) {
 
 	let name;
 
-	const legacy = parser.read( /^:(?:first-line|first-letter|before|after)/ );
+	const legacy = parser.read( /^:(?:first-line|first-letter|before|after|\-[a-z\-]+)/i );
 
 	if ( legacy ) {
 		name = legacy.slice( 1 );

@@ -8,27 +8,6 @@
 			"type": "AtRule",
 			"start": 0,
 			"end": 62,
-			"media": "screen",
-			"not": false,
-			"expressions": [
-				{
-					"type": "MediaQuery",
-					"start": 18,
-					"end": 36,
-					"key": {
-						"type": "Identifier",
-						"start": 19,
-						"end": 28,
-						"name": "min-width"
-					},
-					"value": {
-						"type": "Value",
-						"start": 30,
-						"end": 35,
-						"data": "640px"
-					}
-				}
-			],
 			"subtype": "media",
 			"name": {
 				"type": "Identifier",
@@ -36,6 +15,34 @@
 				"end": 6,
 				"name": "media"
 			},
+			"queries": [
+				{
+					"type": "MediaQuery",
+					"start": 7,
+					"end": 37,
+					"media": "screen",
+					"not": false,
+					"expressions": [
+						{
+							"type": "MediaQueryExpression",
+							"start": 18,
+							"end": 36,
+							"key": {
+								"type": "Identifier",
+								"start": 19,
+								"end": 28,
+								"name": "min-width"
+							},
+							"value": {
+								"type": "Value",
+								"start": 30,
+								"end": 35,
+								"data": "640px"
+							}
+						}
+					]
+				}
+			],
 			"body": [
 				{
 					"type": "QualifiedRule",

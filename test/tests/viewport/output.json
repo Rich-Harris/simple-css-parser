@@ -1,0 +1,102 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 86,
+	"comments": [],
+	"body": [
+		{
+			"type": "AtRule",
+			"start": 0,
+			"end": 26,
+			"subtype": "viewport",
+			"name": {
+				"type": "Identifier",
+				"start": 1,
+				"end": 9,
+				"name": "viewport"
+			},
+			"body": [
+				{
+					"type": "ViewportDeclaration",
+					"start": 12,
+					"end": 24,
+					"key": "width",
+					"value": {
+						"type": "Dimension",
+						"start": 19,
+						"end": 23,
+						"value": "auto"
+					}
+				}
+			]
+		},
+		{
+			"type": "AtRule",
+			"start": 28,
+			"end": 86,
+			"subtype": "media",
+			"name": {
+				"type": "Identifier",
+				"start": 29,
+				"end": 34,
+				"name": "media"
+			},
+			"queries": [
+				{
+					"type": "MediaQuery",
+					"start": 35,
+					"end": 54,
+					"media": null,
+					"not": false,
+					"expressions": [
+						{
+							"type": "MediaQueryExpression",
+							"start": 35,
+							"end": 53,
+							"key": {
+								"type": "Identifier",
+								"start": 36,
+								"end": 45,
+								"name": "max-width"
+							},
+							"value": {
+								"type": "Value",
+								"start": 47,
+								"end": 52,
+								"data": "384px"
+							}
+						}
+					]
+				}
+			],
+			"body": [
+				{
+					"type": "AtRule",
+					"start": 57,
+					"end": 84,
+					"subtype": "viewport",
+					"name": {
+						"type": "Identifier",
+						"start": 58,
+						"end": 66,
+						"name": "viewport"
+					},
+					"body": [
+						{
+							"type": "ViewportDeclaration",
+							"start": 69,
+							"end": 82,
+							"key": "width",
+							"value": {
+								"type": "Dimension",
+								"start": 76,
+								"end": 81,
+								"value": "384px"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,44 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 40,
+	"comments": [],
+	"body": [
+		{
+			"type": "AtRule",
+			"start": 0,
+			"end": 40,
+			"media": [
+				{
+					"type": "MediaQuery",
+					"start": 21,
+					"end": 27,
+					"media": "screen",
+					"not": false,
+					"expressions": []
+				},
+				{
+					"type": "MediaQuery",
+					"start": 29,
+					"end": 39,
+					"media": "projection",
+					"not": false,
+					"expressions": []
+				}
+			],
+			"subtype": "import",
+			"name": {
+				"type": "Identifier",
+				"start": 1,
+				"end": 7,
+				"name": "import"
+			},
+			"url": {
+				"type": "String",
+				"start": 8,
+				"end": 20,
+				"value": "common.css"
+			}
+		}
+	]
+}

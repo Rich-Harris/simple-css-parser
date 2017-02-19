@@ -8,56 +8,6 @@
 			"type": "AtRule",
 			"start": 0,
 			"end": 86,
-			"media": null,
-			"not": false,
-			"expressions": [
-				{
-					"type": "MediaQuery",
-					"start": 7,
-					"end": 25,
-					"key": {
-						"type": "Identifier",
-						"start": 8,
-						"end": 17,
-						"name": "min-width"
-					},
-					"value": {
-						"type": "Value",
-						"start": 19,
-						"end": 24,
-						"data": "640px"
-					}
-				},
-				{
-					"type": "MediaQuery",
-					"start": 30,
-					"end": 48,
-					"key": {
-						"type": "Identifier",
-						"start": 31,
-						"end": 40,
-						"name": "max-width"
-					},
-					"value": {
-						"type": "Value",
-						"start": 42,
-						"end": 47,
-						"data": "800px"
-					}
-				},
-				{
-					"type": "MediaQuery",
-					"start": 53,
-					"end": 60,
-					"key": {
-						"type": "Identifier",
-						"start": 54,
-						"end": 59,
-						"name": "color"
-					},
-					"value": null
-				}
-			],
 			"subtype": "media",
 			"name": {
 				"type": "Identifier",
@@ -65,6 +15,63 @@
 				"end": 6,
 				"name": "media"
 			},
+			"queries": [
+				{
+					"type": "MediaQuery",
+					"start": 7,
+					"end": 61,
+					"media": null,
+					"not": false,
+					"expressions": [
+						{
+							"type": "MediaQueryExpression",
+							"start": 7,
+							"end": 25,
+							"key": {
+								"type": "Identifier",
+								"start": 8,
+								"end": 17,
+								"name": "min-width"
+							},
+							"value": {
+								"type": "Value",
+								"start": 19,
+								"end": 24,
+								"data": "640px"
+							}
+						},
+						{
+							"type": "MediaQueryExpression",
+							"start": 30,
+							"end": 48,
+							"key": {
+								"type": "Identifier",
+								"start": 31,
+								"end": 40,
+								"name": "max-width"
+							},
+							"value": {
+								"type": "Value",
+								"start": 42,
+								"end": 47,
+								"data": "800px"
+							}
+						},
+						{
+							"type": "MediaQueryExpression",
+							"start": 53,
+							"end": 60,
+							"key": {
+								"type": "Identifier",
+								"start": 54,
+								"end": 59,
+								"name": "color"
+							},
+							"value": null
+						}
+					]
+				}
+			],
 			"body": [
 				{
 					"type": "QualifiedRule",

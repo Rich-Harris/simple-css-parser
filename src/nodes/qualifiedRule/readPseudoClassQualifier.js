@@ -146,7 +146,7 @@ export default function readPseudoClassQualifier ( parser ) {
 	}
 
 	if ( !isStandard[ name ] ) {
-		parser.error( `Unrecognised pseudo-class '${name}` );
+		parser.error( `Unrecognised pseudo-class '${name}'` );
 	}
 
 	let parameter;

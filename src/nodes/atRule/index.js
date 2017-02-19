@@ -3,6 +3,7 @@ import augmentImport from './augmentImport.js';
 import augmentKeyframes from './augmentKeyframes.js';
 import augmentMedia from './augmentMedia.js';
 import augmentNamespace from './augmentNamespace.js';
+import augmentViewport from './augmentViewport.js';
 import readIdentifier from '../shared/readIdentifier.js';
 
 const augmenters = {
@@ -11,10 +12,11 @@ const augmenters = {
 	media: augmentMedia,
 	namespace: augmentNamespace,
 
-	keyframes: augmentKeyframes
+	keyframes: augmentKeyframes,
+	viewport: augmentViewport
 };
 
-[ 'keyframes' ].forEach( name => {
+[ 'keyframes', 'viewport' ].forEach( name => {
 	augmenters[ `-o-${name}` ] = augmenters[ `-ms-${name}` ] = augmenters[ `-moz-${name}` ] = augmenters[ `-webkit-${name}` ] = augmenters[ name ];
 });
 

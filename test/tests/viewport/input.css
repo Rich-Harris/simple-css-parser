@@ -1,0 +1,5 @@
+@viewport { width: auto; }
+
+@media (max-width: 384px) {
+	@viewport { width: 384px; }
+}

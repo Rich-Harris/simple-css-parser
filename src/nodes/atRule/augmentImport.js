@@ -1,5 +1,6 @@
 import readString from '../shared/readString.js';
 import readUri from '../shared/readUri.js';
+import readMediaQueryList from '../shared/readMediaQueryList.js';
 
 export default function augmentImport ( rule, parser ) {
 	if ( parser.depth > 0 ) {
@@ -10,13 +11,12 @@ export default function augmentImport ( rule, parser ) {
 	const url = readString( parser ) || readUri( parser );
 	parser.advance();
 
-	// TODO list of media queries
-	const media = [];
+	const media = readMediaQueryList( parser );
 
 	parser.advance();
 	parser.eat( ';', true );
 
 	rule.url = url;
-	rule.media = media;
+	rule.media = media || null;
 	rule.end = parser.index;
 }

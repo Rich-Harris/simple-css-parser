@@ -1,13 +1,14 @@
 {
 	"type": "StyleSheet",
 	"start": 0,
-	"end": 14,
+	"end": 23,
 	"comments": [],
 	"body": [
 		{
 			"type": "AtRule",
 			"start": 0,
-			"end": 14,
+			"end": 23,
+			"media": null,
 			"subtype": "import",
 			"name": {
 				"type": "Identifier",
@@ -15,12 +16,11 @@
 				"end": 7,
 				"name": "import"
 			},
-			"media": null,
 			"url": {
-				"type": "String",
+				"type": "Uri",
 				"start": 8,
-				"end": 13,
-				"value": "foo"
+				"end": 22,
+				"value": "foo.css"
 			}
 		}
 	]
