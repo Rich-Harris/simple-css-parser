@@ -1,10 +1,17 @@
 import { whitespace } from '../../patterns.js';
 
+// https://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
+// tl;dr: valid identifiers include [a-zA-Z0-9_\-] plus any
+// character above \u00A0 (160 — non-breaking space), plus any
+// escaped character
+
 const specials = '! " # $ % & \' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ ` { | } ~'.split( ' ' );
 const isSpecial = {};
 specials.forEach( char => {
 	isSpecial[ char ] = true;
 });
+
+const validChars = /[a-zA-Z0-9_\-]/;
 
 export default function ident ( parser ) {
 	let result = '';
@@ -23,10 +30,10 @@ export default function ident ( parser ) {
 		} else {
 			if ( char === '\\' ) {
 				escaped = true;
-			} else if ( isSpecial[ char ] ) {
-				return result;
-			} else {
+			} else if ( validChars.test( char ) || char.charCodeAt( 0 ) >= 160 ) {
 				result += char;
+			} else {
+				return result;
 			}
 		}
 

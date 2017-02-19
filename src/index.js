@@ -62,7 +62,7 @@ export function parse ( css, options = {} ) {
 					const value = this.readUntil( /\*\// );
 					this.eat( '*/' );
 
-					this.comments.push({ start, value, end: this.index });
+					this.result.comments.push({ start, value, end: this.index });
 				}
 
 				else {

@@ -1,0 +1,47 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 26,
+	"comments": [],
+	"body": [
+		{
+			"type": "QualifiedRule",
+			"start": 0,
+			"end": 26,
+			"selectors": [
+				{
+					"type": "SimpleSelector",
+					"start": 0,
+					"end": 1,
+					"element": {
+						"type": "Identifier",
+						"start": 0,
+						"end": 1,
+						"name": "*"
+					},
+					"qualifiers": []
+				}
+			],
+			"declarations": [
+				{
+					"type": "Declaration",
+					"start": 5,
+					"end": 23,
+					"key": {
+						"type": "Identifier",
+						"start": 5,
+						"end": 13,
+						"name": "position"
+					},
+					"important": false,
+					"value": {
+						"type": "Value",
+						"start": 15,
+						"end": 23,
+						"data": "relative"
+					}
+				}
+			]
+		}
+	]
+}

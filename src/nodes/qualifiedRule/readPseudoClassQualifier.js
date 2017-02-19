@@ -151,7 +151,7 @@ export default function readPseudoClassQualifier ( parser ) {
 
 	let parameter;
 
-	const readParameter = parameterReaders[ name ];
+	const readParameter = name.startsWith( 'nth' ) ? parameterReaders.nth : parameterReaders[ name ];
 	if ( readParameter ) {
 		parser.eat( '(', true );
 		parser.advance();

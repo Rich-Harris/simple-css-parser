@@ -1,0 +1,49 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 25,
+	"comments": [],
+	"body": [
+		{
+			"type": "QualifiedRule",
+			"start": 0,
+			"end": 25,
+			"selectors": [
+				{
+					"type": "SimpleSelector",
+					"start": 0,
+					"end": 8,
+					"element": null,
+					"qualifiers": [
+						{
+							"type": "ClassQualifier",
+							"start": 0,
+							"end": 8,
+							"value": "foo-bar"
+						}
+					]
+				}
+			],
+			"declarations": [
+				{
+					"type": "Declaration",
+					"start": 12,
+					"end": 22,
+					"key": {
+						"type": "Identifier",
+						"start": 12,
+						"end": 17,
+						"name": "color"
+					},
+					"important": false,
+					"value": {
+						"type": "Value",
+						"start": 19,
+						"end": 22,
+						"data": "red"
+					}
+				}
+			]
+		}
+	]
+}

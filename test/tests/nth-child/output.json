@@ -1,0 +1,60 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 35,
+	"comments": [],
+	"body": [
+		{
+			"type": "QualifiedRule",
+			"start": 0,
+			"end": 35,
+			"selectors": [
+				{
+					"type": "SimpleSelector",
+					"start": 0,
+					"end": 18,
+					"element": {
+						"type": "Identifier",
+						"start": 0,
+						"end": 2,
+						"name": "li"
+					},
+					"qualifiers": [
+						{
+							"type": "PseudoClass",
+							"start": 2,
+							"end": 18,
+							"name": "nth-child",
+							"parameter": {
+								"type": "Indexes",
+								"start": 13,
+								"end": 17,
+								"value": "3n+1"
+							}
+						}
+					]
+				}
+			],
+			"declarations": [
+				{
+					"type": "Declaration",
+					"start": 22,
+					"end": 32,
+					"key": {
+						"type": "Identifier",
+						"start": 22,
+						"end": 27,
+						"name": "color"
+					},
+					"important": false,
+					"value": {
+						"type": "Value",
+						"start": 29,
+						"end": 32,
+						"data": "red"
+					}
+				}
+			]
+		}
+	]
+}
