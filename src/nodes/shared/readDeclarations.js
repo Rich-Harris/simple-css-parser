@@ -27,8 +27,10 @@ function readDeclaration ( parser ) {
 	parser.advance();
 
 	const value = readValue( parser );
+	parser.advance();
 
-	const important = parser.match( '!important' );
+	const important = !!parser.read( /!\s*important/i );
+	if ( important ) parser.advance();
 
 	return {
 		type: 'Declaration',
@@ -58,13 +60,12 @@ function readProperty ( parser ) {
 function readValue ( parser ) {
 	// TODO make this more sophisticated. maybe different readers for different properties?
 	const start = parser.index;
-	const data = parser.readUntil( /(?:[;\}]|!important)/ );
-	const end = parser.index;
+	const data = parser.readUntil( /(?:[;\}]|!\s*important)/i );
 
 	return {
 		type: 'Value',
-		data,
 		start,
-		end
+		end: parser.index,
+		data
 	};
 }

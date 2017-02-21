@@ -106,12 +106,14 @@ describe( 'simple-css-parser', () => {
 		});
 
 		glob.sync( '**/*.css', { cwd: 'test/samples' }).forEach( file => {
-			it( file, () => {
+			const skip = /\.skip\.css$/.test( file );
+
+			( skip ? it.skip : it )( file, () => {
 				const input = fs.readFileSync( path.join( 'test/samples', file ), 'utf-8' );
 
 				try {
 					marky.mark( file );
-					const actual = css.parse( input );
+					css.parse( input );
 					marky.stop( file );
 				} catch ( err ) {
 					if ( err.name === 'ParseError' ) {

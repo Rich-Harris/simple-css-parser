@@ -1,0 +1,8 @@
+@font-face {
+	font-family: foo-italic-200;
+	src: local('☺︎'),
+		url(/fonts/foo/foo-italic-200.woff) format('woff'),
+		url(/fonts/foo/foo-italic-200.ttf) format('truetype');
+	font-style: italic;
+	font-weight: 200
+}

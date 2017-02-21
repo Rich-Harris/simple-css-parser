@@ -1,4 +1,5 @@
 import augmentCharset from './augmentCharset.js';
+import augmentFontface from './augmentFontface.js';
 import augmentImport from './augmentImport.js';
 import augmentKeyframes from './augmentKeyframes.js';
 import augmentMedia from './augmentMedia.js';
@@ -11,6 +12,7 @@ const augmenters = {
 	import: augmentImport,
 	media: augmentMedia,
 	namespace: augmentNamespace,
+	'font-face': augmentFontface,
 
 	keyframes: augmentKeyframes,
 	viewport: augmentViewport

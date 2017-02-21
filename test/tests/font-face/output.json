@@ -1,0 +1,70 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 213,
+	"comments": [],
+	"body": [
+		{
+			"type": "AtRule",
+			"start": 0,
+			"end": 213,
+			"subtype": "font-face",
+			"name": {
+				"type": "Identifier",
+				"start": 1,
+				"end": 10,
+				"name": "font-face"
+			},
+			"body": [
+				{
+					"type": "FontfaceDeclaration",
+					"start": 14,
+					"end": 41,
+					"key": "font-family",
+					"value": {
+						"type": "Identifier",
+						"start": 27,
+						"end": 41,
+						"name": "foo-italic-200"
+					}
+				},
+				{
+					"type": "FontfaceDeclaration",
+					"start": 44,
+					"end": 171,
+					"key": "src",
+					"value": {
+						"type": "FontSrc",
+						"start": 49,
+						"end": 171,
+						"data": "local('☺︎'),\n\t\turl(/fonts/foo/foo-italic-200.woff) format('woff'),\n\t\turl(/fonts/foo/foo-italic-200.ttf) format('truetype')"
+					}
+				},
+				{
+					"type": "FontfaceDeclaration",
+					"start": 174,
+					"end": 192,
+					"key": "font-style",
+					"value": {
+						"type": "FontStyle",
+						"start": 186,
+						"end": 192,
+						"data": "italic"
+					}
+				},
+				{
+					"type": "FontfaceDeclaration",
+					"start": 195,
+					"end": 211,
+					"key": "font-weight",
+					"value": {
+						"type": "FontWeight",
+						"start": 208,
+						"end": 211,
+						"data": "200"
+					}
+				}
+			]
+		}
+	]
+}
