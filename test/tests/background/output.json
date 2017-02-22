@@ -1,13 +1,13 @@
 {
 	"type": "StyleSheet",
 	"start": 0,
-	"end": 82,
+	"end": 95,
 	"comments": [],
 	"body": [
 		{
 			"type": "QualifiedRule",
 			"start": 0,
-			"end": 82,
+			"end": 95,
 			"selectors": [
 				{
 					"type": "SimpleSelector",
@@ -26,19 +26,19 @@
 				{
 					"type": "Declaration",
 					"start": 7,
-					"end": 81,
+					"end": 92,
 					"key": {
 						"type": "Identifier",
 						"start": 7,
-						"end": 23,
-						"name": "background-image"
+						"end": 17,
+						"name": "background"
 					},
 					"important": false,
 					"value": {
 						"type": "Expression",
-						"start": 25,
-						"end": 80,
-						"data": "url(data:image/gif;base64,R0lGODlhIAAgAOJonqUArN4aAgA7)"
+						"start": 19,
+						"end": 92,
+						"data": "url(data:image/gif;base64,R0lGODlhIAAgAOJonqUArN4aAgA7) no-repeat 50% 50%"
 					}
 				}
 			]

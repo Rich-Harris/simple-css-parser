@@ -25,14 +25,14 @@
 								"end": 4,
 								"name": "foo"
 							},
+							"casesensitive": true,
 							"operator": "=",
 							"value": {
 								"type": "String",
 								"start": 5,
 								"end": 10,
 								"value": "bar"
-							},
-							"casesensitive": true
+							}
 						}
 					]
 				}
@@ -42,15 +42,15 @@
 					"type": "Declaration",
 					"start": 15,
 					"end": 25,
-					"important": false,
 					"key": {
 						"type": "Identifier",
 						"start": 15,
 						"end": 20,
 						"name": "color"
 					},
+					"important": false,
 					"value": {
-						"type": "Value",
+						"type": "Expression",
 						"start": 22,
 						"end": 25,
 						"data": "red"

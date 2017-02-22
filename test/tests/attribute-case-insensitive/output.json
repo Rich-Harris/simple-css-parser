@@ -25,14 +25,14 @@
 								"end": 5,
 								"name": "type"
 							},
+							"casesensitive": false,
 							"operator": "=",
 							"value": {
 								"type": "String",
 								"start": 6,
 								"end": 13,
 								"value": "email"
-							},
-							"casesensitive": false
+							}
 						}
 					]
 				}
@@ -42,15 +42,15 @@
 					"type": "Declaration",
 					"start": 20,
 					"end": 30,
-					"important": false,
 					"key": {
 						"type": "Identifier",
 						"start": 20,
 						"end": 25,
 						"name": "color"
 					},
+					"important": false,
 					"value": {
-						"type": "Value",
+						"type": "Expression",
 						"start": 27,
 						"end": 30,
 						"data": "red"

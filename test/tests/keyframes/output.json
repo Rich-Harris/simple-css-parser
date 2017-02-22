@@ -44,7 +44,7 @@
 								},
 								"important": false,
 								"value": {
-									"type": "Value",
+									"type": "Expression",
 									"start": 34,
 									"end": 35,
 									"data": "0"
@@ -70,7 +70,7 @@
 								},
 								"important": false,
 								"value": {
-									"type": "Value",
+									"type": "Expression",
 									"start": 54,
 									"end": 59,
 									"data": "100px"
@@ -121,7 +121,7 @@
 								},
 								"important": false,
 								"value": {
-									"type": "Value",
+									"type": "Expression",
 									"start": 106,
 									"end": 107,
 									"data": "0"
@@ -147,7 +147,7 @@
 								},
 								"important": false,
 								"value": {
-									"type": "Value",
+									"type": "Expression",
 									"start": 128,
 									"end": 133,
 									"data": "100px"

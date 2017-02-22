@@ -48,7 +48,7 @@
 					},
 					"important": false,
 					"value": {
-						"type": "Value",
+						"type": "Expression",
 						"start": 29,
 						"end": 32,
 						"data": "red"

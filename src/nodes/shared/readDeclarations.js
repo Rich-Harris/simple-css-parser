@@ -1,3 +1,5 @@
+import readExpressionList from './readExpressionList.js';
+
 export default function readDeclarations ( parser ) {
 	const declarations = [];
 
@@ -26,7 +28,7 @@ function readDeclaration ( parser ) {
 	parser.eat( ':', true );
 	parser.advance();
 
-	const value = readValue( parser );
+	const value = readExpressionList( parser );
 	parser.advance();
 
 	const important = !!parser.read( /!\s*important/i );
@@ -54,18 +56,5 @@ function readProperty ( parser ) {
 		name,
 		start,
 		end: parser.index
-	};
-}
-
-function readValue ( parser ) {
-	// TODO make this more sophisticated. maybe different readers for different properties?
-	const start = parser.index;
-	const data = parser.readUntil( /(?:[;\}]|!\s*important)/i );
-
-	return {
-		type: 'Value',
-		start,
-		end: parser.index,
-		data
 	};
 }

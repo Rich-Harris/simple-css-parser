@@ -27,15 +27,15 @@
 					"type": "Declaration",
 					"start": 5,
 					"end": 15,
-					"important": false,
 					"key": {
 						"type": "Identifier",
 						"start": 5,
 						"end": 10,
 						"name": "color"
 					},
+					"important": false,
 					"value": {
-						"type": "Value",
+						"type": "Expression",
 						"start": 12,
 						"end": 15,
 						"data": "red"

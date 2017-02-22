@@ -35,10 +35,10 @@
 					},
 					"important": true,
 					"value": {
-						"type": "Value",
+						"type": "Expression",
 						"start": 12,
-						"end": 16,
-						"data": "red "
+						"end": 15,
+						"data": "red"
 					}
 				}
 			]
