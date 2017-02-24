@@ -1,6 +1,4 @@
 export default function string ( parser ) {
-	const start = parser.index;
-
 	const quote = parser.read( /^["']/ );
 	if ( !quote ) return;
 
@@ -11,14 +9,14 @@ export default function string ( parser ) {
 		const char = parser.css[ parser.index++ ];
 
 		if ( escaped ) {
-			result += char;
+			result = result + char;
 			escaped = false;
 		} else if ( char === '\\' ) {
 			escaped = true;
 		} else if ( char === quote ) {
 			return result;
 		} else {
-			result += char;
+			result = result + char;
 		}
 	}
 
