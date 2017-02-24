@@ -3,21 +3,17 @@ import * as patterns from '../../patterns.js';
 export default function readQuantity ( parser ) {
 	const start = parser.index;
 
-	const value = (
-		parser.read( patterns.percentage ) ||
-		parser.read( patterns.length ) ||
-		parser.read( patterns.angle ) ||
-		parser.read( patterns.time ) ||
-		parser.read( patterns.frequency ) ||
-		parser.read( patterns.number )
-	);
+	const number = parser.read( patterns.number );
+	if ( !number ) return;
 
-	if ( !value ) return;
+	parser.read( /^(?:%|em|ex|px|cm|mm|in|pt|pc|rem|vh|vw|vmin|vmax|q|deg|rad|grad|m?s|k?hz)/ );
+
+	const end = parser.index;
 
 	return {
 		type: 'Quantity',
 		start,
 		end: parser.index,
-		value
+		value: parser.css.slice( start, end )
 	};
 }

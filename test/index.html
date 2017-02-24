@@ -1,0 +1,29 @@
+<head>
+	<style>
+		textarea {
+			width: 100%;
+			box-sizing: border-box;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<textarea></textarea>
+	<button>parse</button>
+
+	<script src='../dist/simple-css-parser.js'></script>
+	<script>
+		const textarea = document.querySelector( 'textarea' );
+		const button = document.querySelector( 'button' );
+
+		button.addEventListener( 'click', event => {
+			console.profile( 'parse' );
+			console.time( 'parse' );
+			const parsed = cssParser.parse( textarea.value );
+			console.timeEnd( 'parse' );
+			console.profileEnd( 'parse' );
+
+			console.log( parsed );
+		});
+	</script>
+</body>
