@@ -1,7 +1,9 @@
+const pattern = /(?:[;\}]|!important)/i;
+
 export default function readGarbage ( parser ) {
 	const start = parser.index;
 
-	const name = parser.readUntil( /(?:[;\}]|!important)/i );
+	const name = parser.readUntil( pattern );
 	if ( !name ) return;
 
 	return {

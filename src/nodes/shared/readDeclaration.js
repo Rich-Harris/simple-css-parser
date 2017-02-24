@@ -1,6 +1,7 @@
 import readExpressionList from './readExpressionList.js';
 
 const propertyPattern = /^\*?[a-z\-]+/i; // leading asterisk is an IE fix, I think
+const importantPattern = /^!\s*important/i;
 
 export default function readDeclaration ( parser ) {
 	const key = readProperty( parser );
@@ -14,7 +15,7 @@ export default function readDeclaration ( parser ) {
 	const value = readExpressionList( parser );
 	parser.advance();
 
-	const important = !!parser.read( /!\s*important/i );
+	const important = !!parser.read( importantPattern );
 	if ( important ) parser.advance();
 
 	return {
