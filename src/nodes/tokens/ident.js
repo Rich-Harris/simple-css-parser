@@ -17,21 +17,23 @@ export default function ident ( parser ) {
 	let result = '';
 	let escaped = false;
 
+	let char;
+
 	while ( parser.index < parser.css.length ) {
-		const char = parser.css[ parser.index ];
+		char = parser.css[ parser.index ];
 
 		if ( whitespace.test( char ) ) {
 			return result;
 		}
 
 		if ( escaped ) {
-			result += char;
+			result = result + char;
 			escaped = false;
 		} else {
 			if ( char === '\\' ) {
 				escaped = true;
 			} else if ( validChars.test( char ) || char.charCodeAt( 0 ) >= 160 ) {
-				result += char;
+				result = result + char;
 			} else {
 				return result;
 			}

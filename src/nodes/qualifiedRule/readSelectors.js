@@ -37,6 +37,11 @@ function readSelector ( parser ) {
 
 	parser.advance();
 
+	// declared above the loop to avoid an obscure v8 deopt
+	let selector;
+	let combinator;
+	let right;
+
 	while ( qualifier = readQualifier( parser ) ) {
 		qualifiers.push( qualifier );
 		end = parser.index;
@@ -44,7 +49,7 @@ function readSelector ( parser ) {
 		parser.advance();
 	}
 
-	const selector = {
+	selector = {
 		type: 'SimpleSelector',
 		element,
 		qualifiers,
@@ -58,9 +63,9 @@ function readSelector ( parser ) {
 
 	if ( !element && !qualifiers.length ) return;
 
-	const combinator = parser.read( /^(?:\+|~|>)/ ) || ' ';
+	combinator = parser.read( /^(?:\+|~|>)/ ) || ' ';
 	parser.advance();
-	const right = readSelector( parser );
+	right = readSelector( parser );
 
 	if ( !right ) {
 		parser.error( 'Expected a selector' );
