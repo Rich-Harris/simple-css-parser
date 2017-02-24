@@ -1,5 +1,7 @@
 import readExpression from './readExpression.js';
 
+const pattern = /^[,\/]/;
+
 // TODO this is messy. need to have different readers for different properties
 export default function readExpressionList ( parser ) {
 	const start = parser.index;
@@ -11,7 +13,7 @@ export default function readExpressionList ( parser ) {
 	parser.advance();
 
 	while ( !parser.match( ';' ) ) {
-		if ( parser.read( /^[,\/]/ ) ) {
+		if ( parser.read( pattern ) ) {
 			parser.advance();
 		}
 

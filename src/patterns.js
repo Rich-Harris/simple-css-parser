@@ -7,3 +7,4 @@ export const number = /[\-\+]?(?:\d?\.\d+|\d+)/;
 export const angle = /[\-\+]?(?:\d?\.\d+|\d+)(?:deg|rad|grad)/;
 export const time = /[\-\+]?(?:\d?\.\d+|\d+)m?s/;
 export const frequency = /[\-\+]?(?:\d?\.\d+|\d+)k?hz/;
+export const closingParen = /\)/;

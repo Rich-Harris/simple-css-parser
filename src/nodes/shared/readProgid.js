@@ -1,7 +1,9 @@
+const pattern = /^progid\:[^;\}]+/i;
+
 export default function readProgid ( parser ) {
 	const start = parser.index;
 
-	const value = parser.read( /^progid\:[^;\}]+/i );
+	const value = parser.read( pattern );
 	if ( !value ) return;
 
 	return {

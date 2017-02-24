@@ -1,5 +1,7 @@
+const quotePattern = /^["']/;
+
 export default function string ( parser ) {
-	const quote = parser.read( /^["']/ );
+	const quote = parser.read( quotePattern );
 	if ( !quote ) return;
 
 	let result = '';

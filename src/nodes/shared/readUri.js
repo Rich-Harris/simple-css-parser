@@ -1,5 +1,7 @@
 import string from '../tokens/string.js';
 
+const pattern = /[\)\s]/;
+
 export default function readUri ( parser ) {
 	const start = parser.index;
 
@@ -7,7 +9,7 @@ export default function readUri ( parser ) {
 
 	parser.advance();
 
-	const value = string( parser ) || parser.readUntil( /[\)\s]/ );
+	const value = string( parser ) || parser.readUntil( pattern );
 
 	parser.advance();
 	parser.eat( ')', true );

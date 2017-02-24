@@ -1,4 +1,5 @@
 import readIdentifier from '../shared/readIdentifier.js';
+import * as patterns from '../../patterns.js';
 
 export default function readMediaQueryList ( parser ) {
 	const list = [];
@@ -18,6 +19,7 @@ export default function readMediaQueryList ( parser ) {
 
 const conditions = /^(?:only|not)/i;
 const mediaTypes = /^(?:all|print|screen|speech|tty|tv|projection|handheld|braille|embossed|aural)/i;
+const and = /and/i;
 
 function readMediaQuery ( parser ) {
 	const start = parser.index;
@@ -35,7 +37,7 @@ function readMediaQuery ( parser ) {
 	let expressions;
 
 	if ( media ) {
-		if ( parser.read( /and/i ) ) {
+		if ( parser.read( and ) ) {
 			parser.advance();
 			expressions = readMediaQueryExpressions( parser );
 		} else {
@@ -103,7 +105,7 @@ function readMediaQueryExpression ( parser ) {
 
 function readValue ( parser ) {
 	const start = parser.index;
-	const data = parser.readUntil( /\)/ ); // TODO make this more sophisticated
+	const data = parser.readUntil( patterns.closingParen ); // TODO make this more sophisticated
 
 	return {
 		type: 'Value',

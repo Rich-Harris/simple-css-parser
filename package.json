@@ -13,15 +13,17 @@
     "locate-character": "^2.0.0",
     "marky": "^1.1.3",
     "mocha": "^3.2.0",
+    "postcss": "^5.2.15",
     "rollup": "^0.41.4",
     "rollup-plugin-node-resolve": "^2.0.0",
     "source-map-support": "^0.4.11"
   },
   "scripts": {
     "build": "rollup -c",
-    "test": "mocha",
+    "test": "mocha test/test.js",
     "pretest": "npm run build",
-    "prepublish": "npm test"
+    "prepublish": "npm test",
+    "bench": "node test/benchmark.js"
   },
   "description": "Parses CSS into JSON",
   "main": "dist/simple-css-parser.js",
