@@ -57,10 +57,11 @@ describe( 'simple-css-parser', () => {
 		fs.readdirSync( 'test/tests' ).forEach( dir => {
 			if ( dir[0] === '.' ) return;
 
-			const solo = exists( path.join( 'test/tests', dir, 'solo' ) );
+			const skip = exists( path.join( 'test/tests', dir, 'input.skip.css' ) );
+			const solo = exists( path.join( 'test/tests', dir, 'input.solo.css' ) );
 
-			( solo ? it.only : it )( dir, () => {
-				const input = fs.readFileSync( path.join( 'test/tests', dir, 'input.css' ), 'utf-8' );
+			( solo ? it.only : skip ? it.skip : it )( dir, () => {
+				const input = fs.readFileSync( path.join( 'test/tests', dir, solo ? 'input.solo.css' : 'input.css' ), 'utf-8' );
 
 				const expected = require( `./tests/${dir}/output.json` );
 				let actual;
@@ -97,7 +98,9 @@ describe( 'simple-css-parser', () => {
 		});
 	});
 
-	describe( 'samples', () => {
+	describe( 'samples', function () {
+		this.timeout( 5000 );
+
 		after( () => {
 			const entries = marky.getEntries();
 			const total = entries.reduce( ( total, entry ) => total + entry.duration, 0 );
@@ -106,9 +109,10 @@ describe( 'simple-css-parser', () => {
 		});
 
 		glob.sync( '**/*.css', { cwd: 'test/samples' }).forEach( file => {
+			const solo = /\.solo\.css$/.test( file );
 			const skip = /\.skip\.css$/.test( file );
 
-			( skip ? it.skip : it )( file, () => {
+			( solo ? it.only : skip ? it.skip : it )( file, () => {
 				const input = fs.readFileSync( path.join( 'test/samples', file ), 'utf-8' );
 
 				try {

@@ -1,0 +1,62 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 29,
+	"comments": [],
+	"body": [
+		{
+			"type": "QualifiedRule",
+			"start": 0,
+			"end": 29,
+			"selectors": [
+				{
+					"type": "SimpleSelector",
+					"start": 0,
+					"end": 12,
+					"element": null,
+					"qualifiers": [
+						{
+							"type": "AttributeQualifier",
+							"start": 0,
+							"end": 12,
+							"name": {
+								"type": "Identifier",
+								"start": 1,
+								"end": 4,
+								"name": "foo"
+							},
+							"casesensitive": true,
+							"operator": "$=",
+							"value": {
+								"type": "String",
+								"start": 6,
+								"end": 11,
+								"value": "bar"
+							}
+						}
+					]
+				}
+			],
+			"declarations": [
+				{
+					"type": "Declaration",
+					"start": 16,
+					"end": 26,
+					"key": {
+						"type": "Identifier",
+						"start": 16,
+						"end": 21,
+						"name": "color"
+					},
+					"important": false,
+					"value": {
+						"type": "Expression",
+						"start": 23,
+						"end": 26,
+						"data": "red"
+					}
+				}
+			]
+		}
+	]
+}

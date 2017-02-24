@@ -1,4 +1,4 @@
-const pattern = /[a-z\-][a-z\-0-9]*/i;
+const pattern = /[a-z\-_][a-z\-0-9_]*/i;
 
 export default function readIdentifier ( parser ) {
 	const start = parser.index;

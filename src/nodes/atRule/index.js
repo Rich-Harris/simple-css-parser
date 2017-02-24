@@ -1,9 +1,11 @@
 import augmentCharset from './augmentCharset.js';
+import augmentDocument from './augmentDocument.js';
 import augmentFontface from './augmentFontface.js';
 import augmentImport from './augmentImport.js';
 import augmentKeyframes from './augmentKeyframes.js';
 import augmentMedia from './augmentMedia.js';
 import augmentNamespace from './augmentNamespace.js';
+import augmentPage from './augmentPage.js';
 import augmentViewport from './augmentViewport.js';
 import readIdentifier from '../shared/readIdentifier.js';
 
@@ -13,12 +15,14 @@ const augmenters = {
 	media: augmentMedia,
 	namespace: augmentNamespace,
 	'font-face': augmentFontface,
+	page: augmentPage,
 
+	document: augmentDocument,
 	keyframes: augmentKeyframes,
 	viewport: augmentViewport
 };
 
-[ 'keyframes', 'viewport' ].forEach( name => {
+[ 'document', 'keyframes', 'viewport' ].forEach( name => {
 	augmenters[ `-o-${name}` ] = augmenters[ `-ms-${name}` ] = augmenters[ `-moz-${name}` ] = augmenters[ `-webkit-${name}` ] = augmenters[ name ];
 });
 

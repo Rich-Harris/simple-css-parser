@@ -1,0 +1,121 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 602,
+	"comments": [
+		{
+			"start": 0,
+			"end": 64,
+			"value": " https://developer.mozilla.org/en-US/docs/Web/CSS/@document "
+		},
+		{
+			"start": 227,
+			"end": 492,
+			"value": " CSS rules here apply to:\n     - The page \"http://www.w3.org/\".\n     - Any page whose URL begins with \"http://www.w3.org/Style/\"\n     - Any page whose URL's host is \"mozilla.org\" or ends with\n       \".mozilla.org\"\n     - Any page whose URL starts with \"https:\" "
+		},
+		{
+			"start": 496,
+			"end": 544,
+			"value": " make the above-mentioned pages really ugly "
+		}
+	],
+	"body": [
+		{
+			"type": "AtRule",
+			"start": 65,
+			"end": 602,
+			"subtype": "document",
+			"name": {
+				"type": "Identifier",
+				"start": 66,
+				"end": 74,
+				"name": "document"
+			},
+			"body": [
+				{
+					"type": "QualifiedRule",
+					"start": 547,
+					"end": 600,
+					"selectors": [
+						{
+							"type": "SimpleSelector",
+							"start": 547,
+							"end": 551,
+							"element": {
+								"type": "Identifier",
+								"start": 547,
+								"end": 551,
+								"name": "body"
+							},
+							"qualifiers": []
+						}
+					],
+					"declarations": [
+						{
+							"type": "Declaration",
+							"start": 558,
+							"end": 571,
+							"key": {
+								"type": "Identifier",
+								"start": 558,
+								"end": 563,
+								"name": "color"
+							},
+							"important": false,
+							"value": {
+								"type": "Expression",
+								"start": 565,
+								"end": 571,
+								"data": "purple"
+							}
+						},
+						{
+							"type": "Declaration",
+							"start": 577,
+							"end": 595,
+							"key": {
+								"type": "Identifier",
+								"start": 577,
+								"end": 587,
+								"name": "background"
+							},
+							"important": false,
+							"value": {
+								"type": "Expression",
+								"start": 589,
+								"end": 595,
+								"data": "yellow"
+							}
+						}
+					]
+				}
+			],
+			"whitelist": [
+				{
+					"type": "Uri",
+					"start": 75,
+					"end": 98,
+					"value": "http://www.w3.org/"
+				},
+				{
+					"type": "DocumentFunction",
+					"start": 115,
+					"end": 151,
+					"value": "url-prefix(http://www.w3.org/Style/)"
+				},
+				{
+					"type": "DocumentFunction",
+					"start": 168,
+					"end": 187,
+					"value": "domain(mozilla.org)"
+				},
+				{
+					"type": "DocumentFunction",
+					"start": 204,
+					"end": 222,
+					"value": "regexp(\"https:.*\")"
+				}
+			]
+		}
+	]
+}

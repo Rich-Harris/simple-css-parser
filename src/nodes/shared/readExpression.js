@@ -1,5 +1,6 @@
 import readColor from './readColor.js';
 import readFunction from './readFunction.js';
+import readGarbage from './readGarbage.js';
 import readIdentifier from './readIdentifier.js';
 import readProgid from './readProgid.js';
 import readQuantity from './readQuantity.js';
@@ -14,6 +15,7 @@ export default function readExpression ( parser ) {
 		readColor( parser ) ||
 		readProgid( parser ) ||
 		readFunction( parser ) ||
-		readIdentifier( parser )
+		readIdentifier( parser ) ||
+		readGarbage( parser )
 	);
 }

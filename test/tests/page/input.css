@@ -1,0 +1,15 @@
+@page {
+	margin: 1in;
+
+	@top-left-corner {
+		content: 'hello'
+	}
+}
+
+@page :left {
+	margin-right: 1in;
+}
+
+@page :left, :right {
+	margin-bottom: 1in;
+}

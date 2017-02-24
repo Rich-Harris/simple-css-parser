@@ -18,6 +18,7 @@ const standardPseudoClasses = [
 	'first-child',
 	'first-of-type',
 	'fullscreen',
+	'full-screen',
 	'focus',
 	'hover',
 	'indeterminate',

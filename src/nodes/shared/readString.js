@@ -4,7 +4,7 @@ export default function readString ( parser ) {
 	const start = parser.index;
 	const value = string( parser );
 
-	if ( !value ) return;
+	if ( value == null ) return;
 
 	return {
 		type: 'String',

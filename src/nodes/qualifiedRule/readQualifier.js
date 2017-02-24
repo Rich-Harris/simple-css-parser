@@ -73,7 +73,7 @@ function readPseudoElementQualifier ( parser ) {
 	};
 }
 
-const operators = /^(?:\^|~|\*)?=/;
+const operators = /^(?:\^|~|\*|\$)?=/;
 
 function readAttributeQualifier ( parser ) {
 	const start = parser.index;
@@ -92,7 +92,9 @@ function readAttributeQualifier ( parser ) {
 	let casesensitive = true;
 
 	if ( operator ) {
-		value = readString( parser ) || readIdentifier( parser );
+		value = readString( parser ) || readAttributeValue( parser );
+		if ( !value ) parser.error( 'Expected attribute value' );
+
 		parser.advance();
 
 		if ( parser.read( /^[iI]/ ) ) {
@@ -111,5 +113,19 @@ function readAttributeQualifier ( parser ) {
 		operator,
 		value,
 		casesensitive
+	};
+}
+
+function readAttributeValue ( parser ) {
+	const start = parser.index;
+
+	const value = parser.readUntil( /]/ );
+	if ( !value ) return;
+
+	return {
+		type: 'Identifier',
+		start,
+		end: parser.index,
+		value
 	};
 }

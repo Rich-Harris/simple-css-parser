@@ -39,15 +39,24 @@ const validDescriptors = {
 	src: parser => {
 		// TODO do this properly https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src
 		const start = parser.index;
-		const data = parser.readUntil( /;/ );
+		let end;
 
-		if ( !data ) return;
+		while ( parser.read( /(?:local\([^\)]+\)|url\([^\)]+\)(?:\s+format\([^\)]+\))?)/i ) ) {
+			end = parser.index;
+			parser.advance();
+
+			if ( parser.eat( ',' ) ) {
+				parser.advance();
+			} else {
+				break;
+			}
+		}
 
 		return {
 			type: 'FontSrc',
 			start,
-			end: parser.index,
-			data
+			end,
+			data: parser.css.slice( start, end )
 		};
 	},
 
