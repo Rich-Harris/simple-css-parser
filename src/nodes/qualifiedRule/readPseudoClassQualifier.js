@@ -100,12 +100,22 @@ const parameterReaders = {
 
 	not: parser => {
 		// TODO in level 4, this can be a selector list (https://drafts.csswg.org/selectors-4/#negation-pseudo)
-		const qualifier = readQualifier( parser );
-		if ( qualifier ) return qualifier;
-
 		const start = parser.index;
 
 		const name = parser.read( patterns.element );
+		const qualifier = readQualifier( parser );
+
+		const end = parser.index;
+
+		if ( name && qualifier ) {
+			return {
+				type: 'InvalidSelector',
+				start,
+				end,
+				value: parser.css.slice( start, end )
+			};
+		}
+
 		if ( name ) {
 			return {
 				type: 'Identifier',
@@ -113,6 +123,10 @@ const parameterReaders = {
 				end: parser.index,
 				name
 			};
+		}
+
+		if ( qualifier ) {
+			return qualifier;
 		}
 
 		parser.error( 'Expected a selector' );

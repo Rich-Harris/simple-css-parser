@@ -1,0 +1,55 @@
+{
+	"type": "StyleSheet",
+	"start": 0,
+	"end": 28,
+	"comments": [],
+	"body": [
+		{
+			"type": "QualifiedRule",
+			"start": 0,
+			"end": 28,
+			"selectors": [
+				{
+					"type": "SimpleSelector",
+					"start": 0,
+					"end": 11,
+					"element": null,
+					"qualifiers": [
+						{
+							"type": "PseudoClass",
+							"start": 0,
+							"end": 11,
+							"name": "not",
+							"parameter": {
+								"type": "InvalidSelector",
+								"start": 5,
+								"end": 10,
+								"value": "p.foo"
+							}
+						}
+					]
+				}
+			],
+			"declarations": [
+				{
+					"type": "Declaration",
+					"start": 15,
+					"end": 25,
+					"key": {
+						"type": "Identifier",
+						"start": 15,
+						"end": 20,
+						"name": "color"
+					},
+					"important": false,
+					"value": {
+						"type": "Expression",
+						"start": 22,
+						"end": 25,
+						"data": "red"
+					}
+				}
+			]
+		}
+	]
+}

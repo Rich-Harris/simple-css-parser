@@ -99,7 +99,7 @@ describe( 'simple-css-parser', () => {
 	});
 
 	describe( 'samples', function () {
-		this.timeout( 5000 );
+		this.timeout( 20000 );
 
 		after( () => {
 			const entries = marky.getEntries();
